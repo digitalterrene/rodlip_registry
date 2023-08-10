@@ -8,8 +8,8 @@ export default function Profile({ user_data }) {
   const [date_joined,setDateJoined]= useState(null)
 
  useEffect(()=>{
-   if(user_data){
-     setDateJoined(user_data.createdAt.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
+   if(user_data &&user_data.createdAt){
+     setDateJoined(user_data.createdAt.toLocaleDateString('en-US', {  day: 'numeric', month: 'long',year: 'numeric' }))
    }
  },[user_data])
   return (
