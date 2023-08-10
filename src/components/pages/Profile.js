@@ -1,10 +1,17 @@
-import React from "react";
+import React,{useSate,useEffect} from "react";
 import { AiOutlineLayout, AiOutlineShareAlt } from "react-icons/ai";
 import { BiLayout } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { IoFingerPrintOutline } from "react-icons/io5";
 import pb from "@/assets/profilebanner.jpg";
 export default function Profile({ user_data }) {
+  const [date_joined,setDateJoined]= useState(null)
+
+ useEffect(()=>{
+   if(user_data){
+     setDateJoined(user_data.createdAt.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }))
+   }
+ },[user_data])
   return (
     <div>
       <div className="container mx-auto my-5 lg:p-5">
@@ -42,12 +49,17 @@ export default function Profile({ user_data }) {
                     </span>
                   </span>
                 </li>
+                
+                <li className="flex items-center py-3">
+                  <span>ID</span>
+                  <span className="ml-auto">
+                    {user_data && user_data._id}
+                  </span>
+                </li>
                 <li className="flex items-center py-3">
                   <span>Member since</span>
                   <span className="ml-auto">
-                    {user_data && user_data.updatedAt
-                      ? user_data.updatedAt
-                      : "Updated At"}
+                    {user_data && date_joined}
                   </span>
                 </li>
               </ul>
