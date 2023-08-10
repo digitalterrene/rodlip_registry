@@ -1,4 +1,4 @@
-import React,{useSate,useEffect} from "react";
+import React,{useState,useEffect} from "react";
 import { AiOutlineLayout, AiOutlineShareAlt } from "react-icons/ai";
 import { BiLayout } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
