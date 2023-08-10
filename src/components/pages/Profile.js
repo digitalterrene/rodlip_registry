@@ -6,7 +6,7 @@ import { IoFingerPrintOutline } from "react-icons/io5";
 import pb from "@/assets/profilebanner.jpg";
 export default function Profile({ user_data }) {
   const [date_joined,setDateJoined]= useState(null)
-createdAt
+
  useEffect(()=>{
    if(user_data &&user_data.createdAt){
    const formattedDate = user_data.createdAt.toLocaleDateString('en-US', {day: 'numeric' , month: 'long', year: 'numeric' })
