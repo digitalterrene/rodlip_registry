@@ -32,7 +32,7 @@ export default function ProfileIcon() {
       toast.success("User successfully logged out", {
         id: toastId,
       });
-      router.reload();
+      router.push("/");
     }, 3000);
   };
   return (
@@ -59,32 +59,6 @@ export default function ProfileIcon() {
               className="font-normal"
             >
               My Profile
-            </Typography>
-          </MenuItem>
-
-          <MenuItem
-            onClick={() => handleDelete()}
-            className="flex items-center gap-2"
-          >
-            <RiDeleteBin6Line className="h-4 w-4" />
-            <Typography variant="small" className="font-normal">
-              Delete
-            </Typography>
-          </MenuItem>
-
-          <MenuItem className="flex items-center gap-2">
-            <FaRegEdit className="h-4 w-4" />
-            <Typography
-              as="a"
-              href={
-                user && user._id
-                  ? `/registries/rodlip_registry/edit/${user._id}`
-                  : "#"
-              }
-              variant="small"
-              className="font-normal"
-            >
-              Edit Profile
             </Typography>
           </MenuItem>
 

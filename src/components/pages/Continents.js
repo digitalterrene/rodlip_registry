@@ -47,45 +47,12 @@ export default function Continents({ continent }) {
     handleSearch();
   }, [continent]);
   return (
-    <div className="p-16">
-      <div className="bg-[#354649] rounded-2xl p-3 px-10 h-56 text-white flex flex-col justify-center">
-        <Typography variant="h3" className="uppercase">
+    <div className="p-1 lg:p-4">
+      <div className="bg-[#354649] rounded-2xl  p-3 lg:px-10 lg:h-56 text-white flex flex-col justify-center">
+        <Typography className="uppercase font-bold lg:text-2xl text-lg">
           {title}
         </Typography>
-        <Typography variant="lead">Continents</Typography>
-      </div>
-      <div className="hero   text-white">
-        <div className="box  text-black pt-6">
-          <div className=" ">
-            <div className="rounded-2xl bg-white  flex items-center w-full p-3 shadow-sm border border-gray-200">
-              <button className="outline-none focus:outline-none"></button>
-              <input
-                type="search"
-                name=""
-                id=""
-                placeholder="Search"
-                className="w-full pl-4 text-sm outline-none focus:outline-none bg-transparent"
-              />
-              <div className="select w-56 flex items-center">
-                <Button className="p-1 text-2xl bg-transparent shadow-none text-black drop-shadow-none">
-                  <AiOutlineSearch />
-                </Button>
-                <Menu className="ml-4">
-                  <MenuHandler>
-                    <ListItem className="p-1 bg-transparent shadow-none text-black drop-shadow-none capitalize">
-                      Filter by
-                    </ListItem>
-                  </MenuHandler>
-                  <MenuList>
-                    <MenuItem>Newest</MenuItem>
-                    <MenuItem>Oldest</MenuItem>
-                    <MenuItem>Random</MenuItem>
-                  </MenuList>
-                </Menu>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Typography className="text-xs lg:text-xl">Continent</Typography>
       </div>
       <div className="flex flex-wrap  w-full py-6">
         {loading ? (

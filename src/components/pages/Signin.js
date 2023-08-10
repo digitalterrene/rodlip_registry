@@ -63,7 +63,7 @@ export default function Signin() {
       <Card className=" lg:w-96 mt-6 w-full  p-2  m-auto lg:mt-10">
         <CardHeader
           variant="gradient"
-          className="mb-4 bg-[#0C4A60] grid h-28 place-items-center"
+          className="mb-4 bg-black grid h-28 place-items-center"
         >
           <Typography variant="h3" color="white">
             Sign in to Account
@@ -87,11 +87,7 @@ export default function Signin() {
           </div>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button
-            onClick={() => handleSubmit()}
-            className="bg-[#0C4A60]"
-            fullWidth
-          >
+          <Button onClick={() => handleSubmit()} className="bg-black" fullWidth>
             Sign In
           </Button>
           <Typography variant="small" className="mt-6 flex justify-center">

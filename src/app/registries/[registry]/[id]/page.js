@@ -1,3 +1,5 @@
+import Dashboard from "@/components/pages/Dashboard";
+import Profile from "@/components/pages/Dashboard";
 import dynamic from "next/dynamic";
 import React from "react";
 const ProfileView = dynamic(() => import("@/components/pages/ProfileView"), {
@@ -6,7 +8,7 @@ const ProfileView = dynamic(() => import("@/components/pages/ProfileView"), {
 export default function page({ params }) {
   return (
     <div>
-      <ProfileView id={params.id} />
+      <Dashboard id={params.id} />
     </div>
   );
 }

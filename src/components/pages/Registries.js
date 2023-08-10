@@ -48,46 +48,14 @@ export default function Registries({ registry }) {
     handleSearch();
   }, [registry]);
   return (
-    <div className="p-16">
-      <div className="bg-[#0C4A60] rounded-2xl p-3 px-10 h-56 text-white flex flex-col justify-center">
-        <Typography variant="h3" className="uppercase">
-          {title}
+    <div className=" p-4">
+      <div className="bg-[#0C4A60] rounded-2xl  p-3 lg:px-10 lg:h-56 text-white flex flex-col justify-center">
+        <Typography className="uppercase font-bold lg:text-2xl text-lg">
+          {registry.replaceAll("_", " ")}
         </Typography>
-        <Typography variant="lead">Registries</Typography>
+        <Typography className="text-xs lg:text-xl">Registry</Typography>
       </div>
-      <div className="hero   text-white">
-        <div className="box  text-black pt-6">
-          <div className=" ">
-            <div className="rounded-2xl bg-white  flex items-center w-full p-3 shadow-sm border border-gray-200">
-              <button className="outline-none focus:outline-none"></button>
-              <input
-                type="search"
-                name=""
-                id=""
-                placeholder="Search"
-                className="w-full pl-4 text-sm outline-none focus:outline-none bg-transparent"
-              />
-              <div className="select w-56 flex items-center">
-                <Button className="p-1 text-2xl bg-transparent shadow-none text-black drop-shadow-none">
-                  <AiOutlineSearch />
-                </Button>
-                <Menu className="ml-4">
-                  <MenuHandler>
-                    <ListItem className="p-1 bg-transparent shadow-none text-black drop-shadow-none capitalize">
-                      Filter by
-                    </ListItem>
-                  </MenuHandler>
-                  <MenuList>
-                    <MenuItem>Newest</MenuItem>
-                    <MenuItem>Oldest</MenuItem>
-                    <MenuItem>Random</MenuItem>
-                  </MenuList>
-                </Menu>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
       {loading ? (
         <div className="flex justify-center  w-full my-56">
           {" "}

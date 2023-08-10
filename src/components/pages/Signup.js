@@ -51,7 +51,7 @@ export default function Signup() {
       <Card className=" lg:w-96 mt-6 w-full  p-2  m-auto lg:mt-10">
         <CardHeader
           variant="gradient"
-          className="mb-4 grid bg-[#0C4A60] h-28 place-items-center"
+          className="mb-4 grid bg-black h-28 place-items-center"
         >
           <Typography variant="h3" color="white">
             Create Account
@@ -75,11 +75,7 @@ export default function Signup() {
           </div>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button
-            onClick={() => handleSubmit()}
-            className="bg-[#0C4A60]"
-            fullWidth
-          >
+          <Button onClick={() => handleSubmit()} className="bg-black" fullWidth>
             Sign Up
           </Button>
           <Typography variant="small" className="mt-6 flex justify-center">
