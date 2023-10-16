@@ -5,7 +5,7 @@ const Continents = dynamic(() => import("@/components/pages/Continents"), {
 });
 export default function page({ params }) {
   return (
-    <div className="py-6 overflow-y-auto">
+    <div className="  overflow-y-auto">
       <Continents continent={params.continent} />
     </div>
   );

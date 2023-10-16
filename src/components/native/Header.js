@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <div className="mx-auto w-full bg-[#f5f3ff] sticky z-[999] top-0 justify-between     flex py-1 items-center px-2 ">
-      <div className=" flex justify-between w-full pt-6 px-3">
+      <div className=" flex justify-between w-full pt-8 px-3">
         <BC />
         <ProfileIcon />
       </div>

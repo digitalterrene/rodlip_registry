@@ -14,7 +14,7 @@ export default function Sidebarr({ tabs, logo, avatar }) {
   const router = useRouter();
   return (
     <>
-      <div className="sticky text-white py- 2 bg-[#f5f3ff] shadow-md  bottom-0  top-0 h-screen">
+      <div className="sticky  text-black py- 2 bg-[#f5f3ff] shadow-md  bottom-0  top-0 h-screen">
         <div
           className={`${
             !mini_heading ? "w-56" : "w-20"
@@ -55,7 +55,7 @@ export default function Sidebarr({ tabs, logo, avatar }) {
                 </Typography>
               )}
             </div>
-            <div className="flex gap-2  text-white flex-col">
+            <div className="flex gap-2    flex-col">
               {!mini_heading && (
                 <div className="flex  mt-6 border-t border-gray-800 pt-6 items-center">
                   <HiOutlineLocationMarker className="text-xl mr-2" />
@@ -70,9 +70,11 @@ export default function Sidebarr({ tabs, logo, avatar }) {
                       setActiveTab(route);
                       router.push(`/continents/${link}`);
                     }}
-                    className={`flex w-full text-white rounded-none hover:shadow-none drop-shadow-none shadow-none p-2 hover:bg-white py-1 items-center bg-${
+                    className={`flex w-full   rounded-none hover:shadow-none drop-shadow-none shadow-none p-2 hover:bg-white py-1 items-center bg-${
                       active_tab === route ? "black" : "transparent"
-                    } border-${active_tab === route && "2"}`}
+                    } text-${active_tab === route ? "white" : ""} border-${
+                      active_tab === route && "2"
+                    }`}
                   >
                     <Tooltip content={`${route}`} placement="right">
                       <img
@@ -85,7 +87,9 @@ export default function Sidebarr({ tabs, logo, avatar }) {
 
                     {!mini_heading && (
                       <Typography
-                        className={`capitalize text-white shodow-none drop-shadow-none  transition-all text-start w-32 ml-3 p-1 rounded-lg  hover:text-black`}
+                        className={`capitalize text-${
+                          active_tab === route ? "white" : ""
+                        } shodow-none drop-shadow-none  transition-all text-start w-32 ml-3 p-1 rounded-lg  hover:text-black`}
                       >
                         {route}
                       </Typography>
@@ -105,7 +109,7 @@ export default function Sidebarr({ tabs, logo, avatar }) {
                       setActiveTab(route);
                       router.push(`/continents/${link}`);
                     }}
-                    className={`flex w-full text-white rounded-none hover:shadow-none drop-shadow-none shadow-none p-2 hover:bg-white py-1 items-center bg-${
+                    className={`flex w-full   rounded-none hover:shadow-none drop-shadow-none shadow-none p-2 hover:bg-white py-1 items-center bg-${
                       active_tab === route ? "black" : "transparent"
                     } border-${active_tab === route && "2"}`}
                   >
@@ -120,7 +124,7 @@ export default function Sidebarr({ tabs, logo, avatar }) {
 
                     {!mini_heading && (
                       <Typography
-                        className={`capitalize text-white shodow-none drop-shadow-none  transition-all text-start w-32 ml-3 p-1 rounded-lg  hover:text-black`}
+                        className={`capitalize  text-black shodow-none drop-shadow-none  transition-all text-start w-32 ml-3 p-1 rounded-lg  hover:text-black`}
                       >
                         {route}
                       </Typography>
