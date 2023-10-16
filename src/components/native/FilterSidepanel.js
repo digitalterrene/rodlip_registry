@@ -54,7 +54,7 @@ export default function FilterSidePanel() {
     import("preline");
   }, []);
   return (
-    <div className="w-72 p-6  space-y-6">
+    <div className="w-96 p-6  space-y-6">
       {/* profession div starts here */}
       <div className="w-full bg-gray-50 border-gay-800 h-80  border   p-8 ">
         <p className="font-bold text-gray-500  mb-3 text-lg">Professions</p>

@@ -1,12 +1,12 @@
 import dynamic from "next/dynamic";
 import React from "react";
-const Generations = dynamic(() => import("@/components/pages/Generations"), {
+const Template = dynamic(() => import("@/components/pages/params/Template"), {
   ssr: false,
 });
 export default function page({ params }) {
   return (
     <div className="py-6 overflow-y-auto">
-      <Generations generation={params.generation} />
+      <Template heading="generations" subheading={params.generation} />
     </div>
   );
 }

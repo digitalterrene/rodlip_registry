@@ -8,11 +8,11 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
-import no_data from "../../assets/no_data.jpg";
-import Loader from "../Loader";
+import no_data from "@/assets/no_data.jpg";
 import { MdClear } from "react-icons/md";
 import Link from "next/link";
-import FilterSidePanel from "../native/FilterSidepanel";
+import Loader from "@/components/native/Loader";
+import FilterSidePanel from "@/components/native/FilterSidepanel";
 
 const filters = [
   {
@@ -36,8 +36,7 @@ const filters = [
     filters: ["new", "featured", "on sale"],
   },
 ];
-export default function Continents({ continent }) {
-  let title = continent.replace("_", " ");
+export default function Template({ heading, subheading, continent }) {
   const [continents, setContinents] = useState([]);
   const [appliedFilters, setAppliedFilters] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -64,14 +63,14 @@ export default function Continents({ continent }) {
   };
   useEffect(() => {
     handleSearch();
-  }, [continent]);
+  }, [subheading]);
   return (
     <div className="  ">
-      <div className="bg-[#354649]  border-t border-white  p-3 lg:px-10 lg:h-56 text-white flex flex-col justify-center">
-        <Typography className="uppercase font-bold lg:text-2xl text-lg">
-          {title}
+      <div className="bg-[#354649]  border-t border-white  p-6 lg:px-10   text-white flex flex-col justify-center">
+        <Typography className="uppercase font-bold lg:text-xl text-lg">
+          {subheading?.replaceAll("_", " ")}
         </Typography>
-        <Typography className="text-xs lg:text-xl">Continent</Typography>
+        <Typography className="text-xs lg:text-lg">{heading}</Typography>
       </div>
       <div className="flex flex-wrap  w-full py-6">
         {loading ? (
@@ -83,14 +82,14 @@ export default function Continents({ continent }) {
           <div className="flex   w-full  py-6">
             <FilterSidePanel />
             <div className="w-full">
-              <div className="flex p-6   justify-between">
+              <div className="flex p-6  items-center  justify-between">
                 <div className="  items-center flex gap-4">
-                  <p className="text-xl font-medium capitalize text-center">
+                  <p className=" font-medium capitalize text-center">
                     Applied Filters
                   </p>
                   <button
                     type="button"
-                    className="p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                    className="p-1 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
                   >
                     <img
                       className="w-6 h-6"
@@ -98,7 +97,7 @@ export default function Continents({ continent }) {
                     />
                   </button>
                 </div>
-                <div className="w-2/3 flex gap-3 items-center px-3    bg-gray-200 h-12">
+                <div className="w-2/3 flex gap-3 items-center px-3  h-8  bg-gray-200  ">
                   {appliedFilters &&
                     appliedFilters.length > 0 &&
                     appliedFilters.map((f, i) => (
@@ -123,7 +122,7 @@ export default function Continents({ continent }) {
                       </button>
                     ))}
                 </div>
-                <p className="text-gray-500 font-medium text-end">
+                <p className="text-gray-500 text-sm font-medium text-end">
                   {continents?.length} products found
                 </p>
               </div>

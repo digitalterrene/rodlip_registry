@@ -1,12 +1,12 @@
 import dynamic from "next/dynamic";
 import React from "react";
-const Continents = dynamic(() => import("@/components/pages/Continents"), {
+const Template = dynamic(() => import("@/components/pages/params/Template"), {
   ssr: false,
 });
 export default function page({ params }) {
   return (
     <div className="  overflow-y-auto">
-      <Continents continent={params.continent} />
+      <Template heading="continent" subheading={params.continent} />
     </div>
   );
 }

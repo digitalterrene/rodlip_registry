@@ -3,12 +3,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import logo from "@/assets/brand/logo.png";
 import { AuthContextProvider } from "@/context/AuthContext";
-import MT_Sidebar from "@/components/Sidebar";
 import Header from "@/components/native/Header";
 import Footer from "@/components/native/Footer";
 import Sidebarr from "@/components/native/Sidebarr";
-import SmallHeader from "@/components/native/SmallHeader";
-import SectionTitle from "@/components/native/SectionTitle";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -57,7 +57,7 @@ export default function Sidebarr({ tabs, logo, avatar }) {
             </div>
             <div className="flex gap-2    flex-col">
               {!mini_heading && (
-                <div className="flex  mt-6 border-t border-gray-800 pt-6 items-center">
+                <div className="flex  mt-6 border-t  pt-6 items-center">
                   <HiOutlineLocationMarker className="text-xl mr-2" />
                   <Typography className="text-gray-500">Continents</Typography>
                 </div>

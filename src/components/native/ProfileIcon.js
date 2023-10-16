@@ -6,21 +6,14 @@ import {
   Avatar,
   Typography,
 } from "@material-tailwind/react";
-import {
-  Cog6ToothIcon,
-  PowerIcon,
-  UserCircleIcon,
-} from "@heroicons/react/24/outline";
+import { PowerIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useAuthContext } from "@/context/AuthContext";
 import { AiOutlineLogin } from "react-icons/ai";
 import { Toaster, toast } from "react-hot-toast";
-import user_logo from "../assets/components/user.png";
-import Image from "next/image";
+import user_logo from "@/assets/components/user.png";
 import { HiUserCircle } from "react-icons/hi";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { FaRegEdit } from "react-icons/fa";
 export default function ProfileIcon() {
   const { user, dispatch } = useAuthContext();
   const router = useRouter();

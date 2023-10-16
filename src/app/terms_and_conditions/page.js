@@ -1,4 +1,4 @@
-import TermsAndConditions from "@/components/pages/TermsAndConditions";
+import TermsAndConditions from "@/components/pages/routes/TermsAndConditions";
 import React from "react";
 
 export default function page() {

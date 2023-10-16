@@ -1,26 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { TbGridDots } from "react-icons/tb";
-import {
-  Navbar,
-  MobileNav,
-  Typography,
-  Button,
-  IconButton,
-  List,
-  ListItem,
-} from "@material-tailwind/react";
-import { useGlobalContext } from "@/context/GlobalContext";
-import ProfileIcon from "../ProfileIcon";
-import Breadcrumb from "./Breadcrumb";
-import SectionTitle from "./SectionTitle";
-import { usePathname } from "next/navigation";
 import BC from "./BC";
+import ProfileIcon from "./ProfileIcon";
 
 export default function Header() {
   const [openNav, setOpenNav] = useState(false);
-  const { toggleSidebar, setToggleSidebar } = useGlobalContext();
-  const pathname = usePathname();
   useEffect(() => {
     window.addEventListener(
       "resize",

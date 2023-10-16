@@ -8,7 +8,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
-import Loader from "../Loader";
+import Loader from "../../native/Loader";
 import no_data from "../../assets/no_data.jpg";
 import banner from "../../assets/pages/registries/one.jpg";
 import Link from "next/link";
