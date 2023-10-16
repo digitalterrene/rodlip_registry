@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import tnc from "../../assets/pages/registries/banner.jpg";
+import tnc from "@/assets/pages/registries/banner.jpg";
 import Image from "next/image";
 import { List, ListItem, Typography } from "@material-tailwind/react";
 export default function TermsAndConditions() {

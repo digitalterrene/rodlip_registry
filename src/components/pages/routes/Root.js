@@ -8,10 +8,10 @@ import {
   Button,
 } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
-import Loader from "../../native/Loader";
-import no_data from "../../assets/no_data.jpg";
-import banner from "../../assets/pages/registries/one.jpg";
+import no_data from "@/assets/no_data.jpg";
+import banner from "@/assets/pages/registries/one.jpg";
 import Link from "next/link";
+import Loader from "@/components/native/Loader";
 export default function Root() {
   const [users, setUsers] = useState([]);
   const [skip, setSkip] = useState(users.length);
