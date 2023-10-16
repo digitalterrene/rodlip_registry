@@ -14,7 +14,7 @@ export default function Sidebarr({ tabs, logo, avatar }) {
   const router = useRouter();
   return (
     <>
-      <div className="sticky text-white py- 2 bg-[#151221] shadow-md  bottom-0  top-0 h-screen">
+      <div className="sticky text-white py- 2 bg-[#f5f3ff] shadow-md  bottom-0  top-0 h-screen">
         <div
           className={`${
             !mini_heading ? "w-56" : "w-20"
