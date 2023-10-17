@@ -43,11 +43,7 @@ export default function ProfileIcon() {
             <HiUserCircle className="h-4 w-4" />
             <Typography
               as="a"
-              href={
-                user && user._id
-                  ? `/registries/rodlip_registry/${user._id}`
-                  : "#"
-              }
+              href={user && user._id ? `/user/profile/${user._id}` : "#"}
               variant="small"
               className="font-normal"
             >

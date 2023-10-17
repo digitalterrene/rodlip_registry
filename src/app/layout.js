@@ -8,92 +8,67 @@ import Footer from "@/components/native/Footer";
 import Sidebarr from "@/components/native/Sidebarr";
 
 const inter = Inter({ subsets: ["latin"] });
-
+const jobCategories = [
+  "technology",
+  "healthcare",
+  "education",
+  "finance",
+  "marketing",
+  "engineering",
+  "hospitality",
+  "unemployed",
+];
 const dashboard_routes = [
   {
-    route: "fenac",
-    link: "/federal_ecopolitical_noble_assembly_committee",
-    icon: "https://cdn-icons-png.flaticon.com/128/2947/2947660.png",
-  },
-
-  {
-    route: "ecea",
-    link: "/employment_consumption_equating_agency",
-    icon: "https://cdn-icons-png.flaticon.com/128/11526/11526969.png",
+    route: "technology",
+    icon: "https://cdn-icons-png.flaticon.com/128/1829/1829892.png",
   },
   {
-    route: "mera",
-    link: "/morality_enforcement_and_retaintion_body",
-    icon: "https://cdn-icons-png.flaticon.com/128/2702/2702134.png",
+    route: "healthcare",
+    icon: "https://cdn-icons-png.flaticon.com/128/684/684262.png",
   },
   {
-    route: "scara",
-    link: "/specialized_companies_active_registering_agency",
-    icon: "https://cdn-icons-png.flaticon.com/128/4399/4399641.png",
+    route: "education",
+    icon: "https://cdn-icons-png.flaticon.com/128/686/686051.png",
   },
   {
-    route: "pl",
-    link: "/perrenial_legacy",
-    icon: "https://cdn-icons-png.flaticon.com/128/5354/5354747.png",
+    route: "finance",
+    icon: "https://cdn-icons-png.flaticon.com/128/3065/3065977.png",
   },
   {
-    route: "north america",
-    link: "/north_america",
-    icon: "https://cdn-icons-png.flaticon.com/128/82/82332.png",
+    route: "marketing",
+    icon: "https://cdn-icons-png.flaticon.com/128/2907/2907972.png",
   },
   {
-    route: "south america",
-    link: "/south_america",
-    icon: "https://cdn-icons-png.flaticon.com/128/82/82416.png",
+    route: "engineering",
+    icon: "https://cdn-icons-png.flaticon.com/128/2385/2385088.png",
   },
   {
-    route: "europe",
-    link: "/europe",
-    icon: "https://cdn-icons-png.flaticon.com/128/1727/1727118.png",
+    route: "hospitality",
+    icon: "https://cdn-icons-png.flaticon.com/128/5693/5693996.png",
   },
   {
-    route: "africa",
-    link: "/africa",
-    icon: "https://cdn-icons-png.flaticon.com/128/2802/2802689.png",
+    route: "unemployed",
+    icon: "https://cdn-icons-png.flaticon.com/128/942/942800.png",
   },
   {
-    route: "australia",
-    link: "/australia",
-    icon: "https://cdn-icons-png.flaticon.com/128/921/921429.png",
-  },
-  {
-    route: "asia",
-    link: "/asia",
-    icon: "https://cdn-icons-png.flaticon.com/128/4746/4746049.png",
-  },
-  {
-    route: "antarctica",
-    link: "/antarctica",
-    icon: "https://cdn-icons-png.flaticon.com/128/4082/4082019.png",
-  },
-  {
-    route: "baby boomers",
-    link: "/baby_boomers",
+    route: "baby-boomers",
     icon: "https://cdn-icons-png.flaticon.com/128/3160/3160279.png",
   },
   {
-    route: "gen x",
-    link: "/gen_x",
+    route: "gen-x",
     icon: "https://cdn-icons-png.flaticon.com/128/4295/4295301.png",
   },
   {
     route: "millennials",
-    link: "/millennials",
     icon: "https://cdn-icons-png.flaticon.com/128/7363/7363508.png",
   },
   {
-    route: "gen z",
-    link: "/gen_z",
+    route: "gen-z",
     icon: "https://cdn-icons-png.flaticon.com/128/2990/2990638.png",
   },
   {
-    route: "gen alpha",
-    link: "/gen_alpha",
+    route: "gen-alpha",
     icon: "https://cdn-icons-png.flaticon.com/128/941/941515.png",
   },
 ];

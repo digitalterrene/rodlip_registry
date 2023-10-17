@@ -36,34 +36,20 @@ const filters = [
     filters: ["new", "featured", "on sale"],
   },
 ];
-export default function Template({ heading, subheading, continent }) {
-  const [continents, setContinents] = useState([]);
+export default function Template({ heading, subheading, data }) {
+  const [filtable_data, setContinents] = useState(data);
   const [appliedFilters, setAppliedFilters] = useState([]);
   const [loading, setLoading] = useState(true);
   const page = 20;
 
   const handleSearch = async () => {
-    const response = await fetch(
-      `https://server.entities.vertueal.com/entities/search_entities/${"continent"}`,
-      {
-        method: "POST",
-        body: JSON.stringify({ key_value: continent }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const json = await response.json();
     setTimeout(() => {
       setLoading(false);
     }, 3000);
-    if (response.ok) {
-      setContinents(json);
-    }
   };
   useEffect(() => {
     handleSearch();
-  }, [subheading]);
+  }, [appliedFilters]);
   return (
     <div className="  ">
       <div className="bg-[#354649]  border-t border-white  p-6 lg:px-10   text-white flex flex-col justify-center">
@@ -123,7 +109,7 @@ export default function Template({ heading, subheading, continent }) {
                     ))}
                 </div>
                 <p className="text-gray-500 text-sm font-medium text-end">
-                  {continents?.length} products found
+                  {filtable_data?.length} products found
                 </p>
               </div>
               <div className="grid grid-cols-5 justify-between p-6 ">
@@ -177,10 +163,10 @@ export default function Template({ heading, subheading, continent }) {
                     </div>
                   ))}
               </div>
-              {continents && continents.length > 0 ? (
-                <div>
-                  {continents &&
-                    continents.map((r, i) => (
+              {filtable_data && filtable_data.length > 0 ? (
+                <div className="grid grid-cols-4 gap-4">
+                  {filtable_data &&
+                    filtable_data.map((r, i) => (
                       <Card className="w-72 h-[480px] mr-2 my-2">
                         <CardHeader
                           shadow={false}
@@ -200,12 +186,6 @@ export default function Template({ heading, subheading, continent }) {
                             >
                               {r && r.username ? r.username : "Username"}
                             </Typography>
-                            <Typography
-                              color="blue-gray"
-                              className="font-medium"
-                            >
-                              {r && r.access_key ? r.access_key : "Access Key"}
-                            </Typography>
                           </div>
                           <Typography
                             variant="small"
@@ -218,13 +198,7 @@ export default function Template({ heading, subheading, continent }) {
                           </Typography>
                         </CardBody>
                         <CardFooter className="pt-0">
-                          <Link
-                            href={
-                              r && r.continent
-                                ? `/continents/${r.continent}/${r._id}`
-                                : `/continents/rodlip_registry/${r._id}`
-                            }
-                          >
+                          <Link href={`/user/profile/${r._id}`}>
                             <Button
                               ripple={false}
                               fullWidth={true}
