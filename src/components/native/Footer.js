@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="w-full md:w-1/2 md:text-center md:mb-0 mb-8">
           <ul className="list-reset flex justify-center flex-wrap text-xs md:text-sm gap-3">
             <li>
-              <a href="/help" className="   ">
+              <a href="#" className="   ">
                 Contact
               </a>
             </li>

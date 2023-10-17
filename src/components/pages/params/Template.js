@@ -85,8 +85,8 @@ export default function Template({ heading, subheading, data }) {
           </div>
         ) : (
           <div className="flex   w-full  py-6">
-            <div className="w-full">
-              <div className="flex p-6  items-center  justify-between">
+            <div className="w-full  ">
+              <div className="lg:flex p-6 space-y-2 items-center   justify-between">
                 <div className="  items-center flex gap-4">
                   <p className=" font-medium capitalize text-center">
                     Applied Filters
@@ -127,14 +127,14 @@ export default function Template({ heading, subheading, data }) {
                       </button>
                     ))}
                 </div>
-                <p className="text-gray-500 text-sm font-medium text-end">
+                <p className="text-gray-500 text-sm font-medium   lg:text-end">
                   {filteredData?.length} users found
                 </p>
               </div>
-              <div className="grid grid-cols-5 justify-between p-6 ">
+              <div className="grid grid-cols-2 lg:grid-cols-5 justify-between p-6 ">
                 {filters &&
                   filters.map((f, i) => (
-                    <div className="hs-dropdown relative inline-flex">
+                    <div className="hs-dropdown mb-2 lg:mb-0 relative inline-flex">
                       <button
                         id="hs-dropdown-default"
                         type="button"
@@ -183,10 +183,10 @@ export default function Template({ heading, subheading, data }) {
                   ))}
               </div>
               {filteredData && filteredData.length > 0 ? (
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid lg:grid-cols-4 gap-4">
                   {filteredData &&
                     filteredData.map((r, i) => (
-                      <Card className="w-72 h-[480px] mr-2 my-2">
+                      <Card className="lg:w-72   h-[480px] mr-2 my-2">
                         <CardHeader
                           shadow={false}
                           floated={false}

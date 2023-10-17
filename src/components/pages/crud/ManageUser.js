@@ -173,8 +173,8 @@ export default function ManageUser({ user, error }) {
       </div>
       <div className=" dark:bg-gray-800 dark:text-gray-50">
         <form className="container flex flex-col mx-auto space-y-12">
-          <fieldset className="flex w-full  gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
-            <div className="space-y-2 w-1/3 col-span-full lg:col-span-1">
+          <fieldset className="lg:flex w-full  gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
+            <div className="space-y-2 lg:w-1/3 col-span-full lg:col-span-1">
               <Typography variant="h5">Basic</Typography>
               <div className="w-full">
                 {" "}
@@ -490,14 +490,11 @@ export default function ManageUser({ user, error }) {
             </div>
           </fieldset>
           {/* Store location information starts here */}
-          <fieldset className="flex w-full  gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
-            <div className="space-y-2  w-1/3  col-span-full lg:col-span-1">
+          <fieldset className="lg:flex w-full  gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
+            <div className="space-y-2  lg:w-1/3 w-full col-span-full lg:col-span-1">
               <Typography variant="h5">Location</Typography>
               <div className="w-full">
-                <Card
-                  variant="gradient"
-                  className="w-full bg-gray-100 max-w-[20rem] p-8"
-                >
+                <Card variant="gradient" className="w-full bg-gray-100   p-8">
                   <CardBody className="p-0">
                     <ul className="flex flex-col gap-4">
                       <li className="flex items-center gap-4">
@@ -636,14 +633,11 @@ export default function ManageUser({ user, error }) {
           </fieldset>
           {/* Store location info ends here */}
           {/* Store socials information starts here */}
-          <fieldset className="flex w-full  gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
-            <div className="space-y-2 w-1/3  col-span-full lg:col-span-1">
+          <fieldset className="lg:flex w-full  gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
+            <div className="space-y-2 lg:w-1/3  col-span-full lg:col-span-1">
               <Typography variant="h5">Socials</Typography>
               <div className="w-full">
-                <Card
-                  variant="gradient"
-                  className="w-full bg-gray-100 max-w-[20rem] p-8"
-                >
+                <Card variant="gradient" className="w-full bg-gray-100   p-8">
                   <CardBody className="p-0">
                     <ul className="flex flex-col gap-4">
                       <li className="flex items-center gap-4">
