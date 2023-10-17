@@ -16,40 +16,57 @@ import FilterSidePanel from "@/components/native/FilterSidepanel";
 
 const filters = [
   {
-    name: "brand",
-    filters: ["nike", "adidas"],
+    name: "country",
+    filters: ["United States", "Canada", "United Kingsdom", "South Africa"],
   },
   {
-    name: "price",
-    filters: ["affordable", "expensive"],
+    name: "Age",
+    filters: ["1+", "13+", "26+", "34+", "48+", "60+"],
   },
   {
-    name: "user ratings",
-    filters: [1, 2, 3, 4, 5],
-  },
-  {
-    name: "price",
-    filters: ["affordable", "expensive"],
-  },
-  {
-    name: "promotion",
-    filters: ["new", "featured", "on sale"],
+    name: "Date Created",
+    filters: ["Newer", "Older"],
   },
 ];
+
 export default function Template({ heading, subheading, data }) {
-  const [filtable_data, setContinents] = useState(data);
+  const [filteredData, setFilteredData] = useState([]);
   const [appliedFilters, setAppliedFilters] = useState([]);
   const [loading, setLoading] = useState(true);
   const page = 20;
 
-  const handleSearch = async () => {
+  useEffect(() => {
+    // Filter the data based on the applied filters
+    if (appliedFilters.length > 0) {
+      const filtered =
+        data &&
+        data.filter((data_) => {
+          for (let i = 0; i < appliedFilters.length; i++) {
+            const filter = appliedFilters[i];
+            for (const key in data_) {
+              if (
+                typeof data_[key] === "string" &&
+                data_[key] &&
+                data_[key]?.includes(filter)
+              ) {
+                return true; // include the data_ if the value is a string and includes the filter
+              }
+            }
+          }
+          return false; // otherwise exclude the data_
+        });
+      setFilteredData(filtered);
+    } else {
+      setFilteredData(data); // Reset to original data when no filters applied
+    }
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
-  };
-  useEffect(() => {
-    handleSearch();
+    }, 4000);
   }, [appliedFilters]);
+
+  useEffect(() => {
+    import("preline");
+  }, []);
   return (
     <div className="  ">
       <div className="bg-[#354649]  border-t border-white  p-6 lg:px-10   text-white flex flex-col justify-center">
@@ -66,7 +83,6 @@ export default function Template({ heading, subheading, data }) {
           </div>
         ) : (
           <div className="flex   w-full  py-6">
-            <FilterSidePanel />
             <div className="w-full">
               <div className="flex p-6  items-center  justify-between">
                 <div className="  items-center flex gap-4">
@@ -83,11 +99,12 @@ export default function Template({ heading, subheading, data }) {
                     />
                   </button>
                 </div>
-                <div className="w-2/3 flex gap-3 items-center px-3  h-8  bg-gray-200  ">
+                <div className="w-2/3 flex gap-3 items-center px-3  h-10  bg-gray-200  ">
                   {appliedFilters &&
                     appliedFilters.length > 0 &&
                     appliedFilters.map((f, i) => (
                       <button
+                        key={i}
                         type="button"
                         onClick={() =>
                           setAppliedFilters((prevState) => {
@@ -101,7 +118,7 @@ export default function Template({ heading, subheading, data }) {
                             return newFilters;
                           })
                         }
-                        class="py-1.5 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-gray-200 font-semibold text-blue-500   hover:bg-gray-200 hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:border-gray-700 dark:hover:border-blue-500"
+                        class="py-1 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-gray-200 font-semibold text-blue-500   hover:bg-gray-200 hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:border-gray-700 dark:hover:border-blue-500"
                       >
                         {f}
                         <MdClear className="hover:text-red-900 text-xl" />
@@ -109,7 +126,7 @@ export default function Template({ heading, subheading, data }) {
                     ))}
                 </div>
                 <p className="text-gray-500 text-sm font-medium text-end">
-                  {filtable_data?.length} products found
+                  {filteredData?.length} users found
                 </p>
               </div>
               <div className="grid grid-cols-5 justify-between p-6 ">
@@ -163,10 +180,10 @@ export default function Template({ heading, subheading, data }) {
                     </div>
                   ))}
               </div>
-              {filtable_data && filtable_data.length > 0 ? (
+              {filteredData && filteredData.length > 0 ? (
                 <div className="grid grid-cols-4 gap-4">
-                  {filtable_data &&
-                    filtable_data.map((r, i) => (
+                  {filteredData &&
+                    filteredData.map((r, i) => (
                       <Card className="w-72 h-[480px] mr-2 my-2">
                         <CardHeader
                           shadow={false}

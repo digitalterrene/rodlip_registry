@@ -4,10 +4,11 @@ import BC from "./BC";
 import ProfileIcon from "./ProfileIcon";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 export default function Header() {
   const [openNav, setOpenNav] = useState(false);
-  const [mini_heading, setMiniHeading] = useState(false);
+  const { mini_heading, setMiniHeading } = useGlobalContext();
   useEffect(() => {
     window.addEventListener(
       "resize",

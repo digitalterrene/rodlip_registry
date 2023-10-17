@@ -1,25 +1,26 @@
 "use client";
 import { dashboard_routes } from "@/assets/data_keys";
-import { Avatar, Button, Tooltip, Typography } from "@material-tailwind/react";
+import { useGlobalContext } from "@/context/GlobalContext";
+import { Button, Tooltip, Typography } from "@material-tailwind/react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { BiTime } from "react-icons/bi";
-import { BsArrowLeft, BsArrowRight, BsShieldExclamation } from "react-icons/bs";
+import { BsShieldExclamation } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import { HiOutlineArrowLongLeft } from "react-icons/hi2";
-import { IoColorPaletteOutline, IoFingerPrintSharp } from "react-icons/io5";
+import { IoColorPaletteOutline } from "react-icons/io5";
 
-export default function Sidebarr({ logo, avatar }) {
+export default function Sidebarr({ logo }) {
   const [active_tab, setActiveTab] = useState("one");
-  const [mini_heading, setMiniHeading] = useState(false);
+  const { mini_heading } = useGlobalContext();
   const router = useRouter();
+
   return (
     <>
       <div className="sticky  text-black py- 2 bg-[#f5f3ff] shadow-md  bottom-0  top-0 h-screen">
         <div
           className={`${
-            !mini_heading ? "w-56" : "w-20"
-          } flex flex-col  overflow-y-auto h-full justify-between   py-4 pt-2  min-h-screen rounded-2xl`}
+            !mini_heading ? "w-60" : "w-20"
+          } flex flex-col  overflow-y-auto h-full justify-between px-3  py-4 pt-2  min-h-screen rounded-2xl`}
         >
           <div className="w-full">
             <div
