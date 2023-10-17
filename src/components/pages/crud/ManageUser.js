@@ -7,7 +7,6 @@ import {
   CardHeader,
   Option,
   Select,
-  Tooltip,
   Typography,
 } from "@material-tailwind/react";
 import { IoLocationOutline } from "react-icons/io5";
@@ -27,8 +26,11 @@ import { FiEdit } from "react-icons/fi";
 import toast, { Toaster } from "react-hot-toast";
 import { rodlip_server } from "@/urls/rodlip_urls";
 import { dashboard_routes } from "@/assets/data_keys";
+import { useAuthContext } from "@/context/AuthContext";
+
 export default function ManageUser({ user, error }) {
   const [inputs, setInputs] = useState({});
+  const { user: logged_user } = useAuthContext();
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [region, setRegion] = useState("");
@@ -39,13 +41,11 @@ export default function ManageUser({ user, error }) {
   const [image, setImage] = useState("");
   const [banner, setBanner] = useState("");
   const cities = City.getCitiesOfState(countryCode, stateCode);
-  const [triggerAlert, setTriggerAlert] = useState(false);
 
   useEffect(() => {
     import("preline");
   }, []);
   const postBanner = (pics) => {
-    setTriggerAlert(true);
     const toastId = toast.loading("Uploading image...");
     if (pics === undefined) {
       toast.error("Image is required", {
@@ -83,7 +83,6 @@ export default function ManageUser({ user, error }) {
     }
   };
   const postImage = (pics) => {
-    setTriggerAlert(true);
     const toastId = toast.loading("Uploading image...");
     if (pics === undefined) {
       toast.error("Image is required", {
@@ -160,11 +159,9 @@ export default function ManageUser({ user, error }) {
     <div>
       {error && <p>{error}</p>}
       <Toaster />
-      <div className="   mb-6 -mt-4  z-[999] w-full flex justify-center">
-        {triggerAlert && alert}
-      </div>
+      <div className="   mb-6 -mt-4  z-[999] w-full flex justify-center"></div>
       <div className="w-full  flex gap-4 justify-end p-3">
-        {false && (
+        {user && logged_user && user._id === logged_user._id && (
           <button
             type="button"
             onClick={() => handleSubmit()}

@@ -16,7 +16,7 @@ import FilterSidePanel from "@/components/native/FilterSidepanel";
 
 const filters = [
   {
-    name: "country",
+    name: "Country",
     filters: ["United States", "Canada", "United Kingsdom", "South Africa"],
   },
   {
@@ -69,12 +69,14 @@ export default function Template({ heading, subheading, data }) {
   }, []);
   return (
     <div className="  ">
-      <div className="bg-[#354649]  border-t border-white  p-6 lg:px-10   text-white flex flex-col justify-center">
-        <Typography className="uppercase font-bold lg:text-xl text-lg">
-          {subheading?.replaceAll("_", " ")}
-        </Typography>
-        <Typography className="text-xs lg:text-lg">{heading}</Typography>
-      </div>
+      {heading && subheading && (
+        <div className="bg-[#354649]  border-t border-white  p-6 lg:px-10   text-white flex flex-col justify-center">
+          <Typography className="uppercase font-bold lg:text-xl text-lg">
+            {subheading?.replaceAll("_", " ")}
+          </Typography>
+          <Typography className="text-xs lg:text-lg">{heading}</Typography>
+        </div>
+      )}
       <div className="flex flex-wrap  w-full py-6">
         {loading ? (
           <div className="flex justify-center  w-full my-56">
