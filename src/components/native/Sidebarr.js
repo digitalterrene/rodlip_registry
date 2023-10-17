@@ -187,14 +187,6 @@ export default function Sidebarr({ logo }) {
                     Terms & Conditions
                   </Typography>
                 </Button>
-                <Button
-                  className="capitalize text-black w-full text-start my-1"
-                  variant="text"
-                >
-                  <Typography as="a" href="/help">
-                    Contact Us
-                  </Typography>
-                </Button>
               </>
             )}
           </div>

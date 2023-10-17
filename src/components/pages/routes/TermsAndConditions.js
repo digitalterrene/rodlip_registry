@@ -5,16 +5,16 @@ import Image from "next/image";
 import { List, ListItem, Typography } from "@material-tailwind/react";
 export default function TermsAndConditions() {
   return (
-    <div className="p-16">
-      <div className="  lg:py-12">
+    <div className=" ">
+      <div className="  ">
         <div className="mb-12 overflow-hidden">
           <Image
             alt="terms and conditions"
-            className="h-[32rem]  rounded-2xl  w-full object-cover object-center"
+            className="h-[32rem] w-full object-cover object-center"
             src={tnc}
           />
         </div>
-        <div className="px-2 lg:px-32">
+        <div className="px-2 lg:px-6">
           <Typography variant="h2" color="blue-gray" className="mb-2">
             Website Terms and Conditions
           </Typography>
